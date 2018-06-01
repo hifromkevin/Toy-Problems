@@ -25,7 +25,21 @@ makeChange(2) === 2
 */
 
 var makeChange = function(total) {
+  var choices = [200, 100, 50, 20, 10, 5, 2, 1];
+  var totalCombos = 0;
 
-};
+  function changeHelper(sum, coinIndex) {
+    if (sum === 0) {
+      totalCombos++;
+      return;
+    }
 
+    for (var i = coinIndex; i < choices.length; i++) {
+      if (choices[i] > total || sum - choices[i] < 0) { continue; }
+      changeHelper(sum - choices[i], i);
+    }
+  }
 
+  changeHelper(total, 0);
+  return totalCombos;
+}; 
