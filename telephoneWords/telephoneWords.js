@@ -62,34 +62,3 @@ var telephoneWords = function(digitString) {
 
   return words;
 };
-
-//Loop through digit string (2 then 7,then 4, then 5)
-//on each number, loop through letters A then B then C
-//Start with first of each: APGJ
-//Then, second of last digit: APGK
-
-/* 
-var telephoneWords = function(digitString) {
-  var words = [];
-
-  var lettersForDigits = function (word, digits) {
-    if (digits.length === 0) {
-      return words.push(word);
-    }
-
-    var currentDigit = digits[0];
-    var letters =
-      phoneDigitsToLetters[currentDigit].split('');
-    for (var i = 0; i < letters.length; i++) {
-      lettersForDigits(word + letters[i], digits.slice(1));
-    };
-  };
-
-  lettersForDigits('', digitString.split(''));
-
-  return words;
-};
-
-
-
-*/
