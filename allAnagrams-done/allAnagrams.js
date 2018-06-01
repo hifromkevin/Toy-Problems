@@ -1,0 +1,35 @@
+/**
+ * Given a single input string, write a function that produces all possible anagrams
+ * of a string and outputs them as an array. At first, don't worry about
+ * repeated strings.  What time complexity is your solution?
+ *
+ * Extra credit: Deduplicate your return array without using uniq().
+ */
+
+/**
+  * example usage:
+  * var anagrams = allAnagrams('abc');
+  * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+  */
+
+var allAnagrams = function(string) {
+  // Your code here.
+  let combos = [];
+
+  function allAnagramsHelper(word, arr) {
+    if(arr.length) {
+      for (var i = 0; i < arr.length; i++) {
+        allAnagramsHelper(word + arr[i], arr.slice(0,i).concat(arr.slice(i + 1)));   
+      }
+    } else {
+      combos.push(word);
+    }
+  }
+
+  allAnagramsHelper('', string.split(''));
+  return combos;
+};
+
+
+//pass the word along
+//pass the array
