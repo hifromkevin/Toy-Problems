@@ -23,6 +23,6 @@ var commonCharacters = function(string1, string2) {
   string2Letters += ']';
 
   var regEx = new RegExp(string2Letters, 'g');
-
+  console.log(regEx);
   return string1.replace(regEx, '');
 };
