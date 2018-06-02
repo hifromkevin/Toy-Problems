@@ -10,6 +10,15 @@ var primeTester = function(n) {
     return false;
   }
   // TODO: return true if n is prime, false otherwise
+  var half = Math.floor(n / 2);
+
+  for (var i = 2; i <= half; i++) {
+    if (n % i === 0) {
+      return false;
+    } 
+  }
+
+  return true;
 };
 
 /* Extra credit: Write a function that generates a list of all prime numbers
