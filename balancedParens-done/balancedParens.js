@@ -50,7 +50,7 @@ var balancedParens = function(input) {
     }
   }
 
-  return true;
+  return storage.length === 0 ? true : false;
 };
 
 
