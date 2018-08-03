@@ -40,7 +40,6 @@ var phoneDigitsToLetters = {
   9: 'WXYZ'
 };
 
-
 var telephoneWords = function(digitString) {
   // TODO: return every combination that can be spelled on a phone with these digits
   var words = [];

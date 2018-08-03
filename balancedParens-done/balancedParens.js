@@ -52,5 +52,3 @@ var balancedParens = function(input) {
 
   return storage.length === 0 ? true : false;
 };
-
-
